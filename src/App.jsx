@@ -1,21 +1,20 @@
-import Chart from "./pages/chart";
-import Home from "./pages/home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import NotFound404 from "./pages/notfound";
+import Home from "./pages/home";
+import Customer from "./pages/customer";
+import NotFound from "./pages/notfound";
+import Chart from "./pages/chart";
 
 function App() {
   return (
     <>
-      {/*  */}
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/customer" element={<Customer />} />
           <Route path="/chart" element={<Chart />} />
-          {/* *は該当しないページ全てという意味 */}
-          <Route path="*" element={<NotFound404 />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
-      {/*  */}
     </>
   );
 }
